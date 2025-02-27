@@ -402,4 +402,6 @@ def tt_augmentation(KEYS, in_size, out_size, crop_center):
     ])
 
 
-
+def print_log_to_file(output_dst, txt, mode='a'):
+    with open(output_dst, mode) as log_:
+        log_.write(txt)
