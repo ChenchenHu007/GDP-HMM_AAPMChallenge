@@ -225,15 +225,15 @@ class GetLoader(object):
         
     def train_dataloader(self):
         dataset = MyDataset(self.cfig,  phase='train') 
-        return DataLoader(dataset, batch_size=self.cfig['train_bs'],  shuffle=True, num_workers=self.cfig['num_workers'])
+        return DataLoader(dataset, batch_size=self.cfig['train_bs'],  shuffle=True, num_workers=self.cfig['num_workers'], pin_memory=True)
     
     def val_dataloader(self):
         dataset = MyDataset(self.cfig, phase='valid') 
-        return DataLoader(dataset, batch_size=self.cfig['val_bs'], shuffle=False, num_workers=self.cfig['num_workers'])
+        return DataLoader(dataset, batch_size=self.cfig['val_bs'], shuffle=False, num_workers=self.cfig['num_workers'], pin_memory=True)
     
     def test_dataloader(self):
         dataset = MyDataset(self.cfig, phase='test') 
-        return DataLoader(dataset, batch_size=self.cfig['val_bs'], shuffle=False, num_workers=self.cfig['num_workers'])
+        return DataLoader(dataset, batch_size=self.cfig['val_bs'], shuffle=False, num_workers=self.cfig['num_workers'], pin_memory=True)
 
 if __name__ == '__main__':
 
