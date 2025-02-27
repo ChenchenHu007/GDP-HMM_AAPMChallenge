@@ -22,7 +22,7 @@ If you have questions related to clinical backgrounds, feel free to start a disc
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 
-parser.add_argument('--cfig_path',  type = str, default='config_files/config-amp.yaml')
+parser.add_argument('--cfig_path',  type = str, default='config_files/config.yaml')
 parser.add_argument('--phase', default = 'train', type = str)
 parser.add_argument('--use_amp', default = True, type = bool)
 args = parser.parse_args()
